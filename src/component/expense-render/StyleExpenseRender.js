@@ -12,7 +12,7 @@ flex-direction: column;
 align-items: center;
 gap: 10px;
 padding: 20px;
-overflow: hidden;
+
 }
 `;
 export const StyleExpenseBox = styled.div`

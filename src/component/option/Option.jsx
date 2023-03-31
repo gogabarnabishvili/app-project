@@ -1,6 +1,20 @@
-import { StyleOption } from "./StyleOption";
+import { StyleOption, StyleSelect } from "./StyleOption";
 
 const Option = (props) => {
-    return <StyleOption>{props.value}</StyleOption>;
+    const value = props.value;
+
+    return (
+        <StyleSelect>
+            {props.value.map((e, index) => (
+                <StyleOption
+                    key={index}
+                    onChange={props.onChange}
+                    value={e.value}
+                >
+                    {e}
+                </StyleOption>
+            ))}
+        </StyleSelect>
+    );
 };
 export default Option;

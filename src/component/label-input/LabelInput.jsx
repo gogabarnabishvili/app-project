@@ -10,6 +10,7 @@ const LabelInput = (props) => {
                 type={props.type}
                 placeholder={props.placeholder}
                 onChange={props.onChange}
+                onclick={props.onclick}
                 value={props.value}
             ></StyleInput>
         </StyleLabel>

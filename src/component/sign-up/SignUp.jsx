@@ -6,8 +6,31 @@ import {
 import Button from "../button/Button";
 import LabelInput from "../label-input/LabelInput";
 import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
 
 const SignUp = (props) => {
+    const [name, setName] = useState("");
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+
+    const onNameChange = (e) => setName(e.target.value);
+    const onPasswordChange = (e) => setPassword(e.target.value);
+    const onEmail = (e) => setEmail(e.target.value);
+    const newUserSave = [];
+    const senedlocal = (e) => {
+        console.log(newUserSave);
+        if (name !== "" && email !== "" && password !== "") {
+            newUserSave.push({
+                name: name,
+                password: password,
+                email: email,
+                id: newUserSave.length + 1,
+            });
+        } else {
+            alert("sheavse");
+        }
+    };
+
     return (
         <StyleMineConteiner>
             <StyleBgImg>
@@ -18,8 +41,7 @@ const SignUp = (props) => {
                     placeholder="name"
                     id="name"
                     name="name"
-                    // value={name}
-                    // onChange={onNameChange}
+                    onChange={onNameChange}
                 />
 
                 <LabelInput
@@ -28,8 +50,7 @@ const SignUp = (props) => {
                     id="password"
                     placeholder="password"
                     name="password"
-                    // value={password}
-                    // onChange={onPasswordChange}
+                    onChange={onPasswordChange}
                 />
                 <LabelInput
                     type="email"
@@ -37,8 +58,7 @@ const SignUp = (props) => {
                     id="email"
                     placeholder="email"
                     name="email"
-                    // value={password}
-                    // onChange={onPasswordChange}
+                    onChange={onEmail}
                 />
                 <LabelInput
                     type="checkbox"
@@ -49,7 +69,7 @@ const SignUp = (props) => {
                 />
 
                 <Link to={"/Filter"}>
-                    <Button value="send" />
+                    <Button value="send" onClick={senedlocal} />
                 </Link>
             </StyleBgImg>
         </StyleMineConteiner>

@@ -8,8 +8,8 @@ import {
 const ExportRender = (props) => {
     return (
         <StyleExpenseListWraper>
-            {props.posts.map((e) => (
-                <StyleExpenseBox>
+            {props.posts.map((e, index) => (
+                <StyleExpenseBox key={index}>
                     <StyleExpenseRenderParagrap>
                         date :
                         <StyleExpenseRenderSpan>

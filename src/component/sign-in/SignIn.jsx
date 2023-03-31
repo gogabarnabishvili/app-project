@@ -2,14 +2,24 @@ import { StyleMineConteiner, StyleLogo, StyleBgImg } from "./StyleSignIn";
 import LabelInput from "../label-input/LabelInput";
 import Button from "../button/Button";
 import { Link, useParams } from "react-router-dom";
-
 import { useState } from "react";
 
+// import SaveExpenses from "../../functions/save-local/SaveExpense";
+
+// console.log(SaveExpenses);
 const SignIn = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
+
     const onNameChange = (e) => setName(e.target.value);
     const onPasswordChange = (e) => setPassword(e.target.value);
+    const card = false;
+
+    if (name !== "" && password !== "") {
+        console.log(name, password);
+    } else {
+        console.log("h,");
+    }
 
     return (
         <StyleMineConteiner>
